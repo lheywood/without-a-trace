@@ -170,5 +170,5 @@
 </template>
 
 <script setup>
-import GoogleReviews from '../Components/GoogleReviews.vue'
+import GoogleReviews from '../components/GoogleReviews.vue'
 </script>
