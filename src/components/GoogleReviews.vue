@@ -3,11 +3,15 @@
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="font-heading text-3xl mb-8">What Our Clients Say</h2>
 
-      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Loading -->
+      <div v-if="loading" class="text-gray-500">Loading reviews...</div>
+
+      <!-- Reviews Grid -->
+      <div v-else class="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
         <div
           v-for="(review, index) in reviews"
           :key="index"
-          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer"
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-all duration-200 ease-in-out cursor-pointer"
         >
           <!-- Author & Stars -->
           <div class="flex items-center mb-2 justify-center">
@@ -25,9 +29,7 @@
           <p class="text-gray-700 text-sm mb-2">{{ review.text }}</p>
 
           <!-- Date -->
-          <p class="text-gray-400 text-xs">
-            {{ formatDate(review.time) }}
-          </p>
+          <p class="text-gray-400 text-xs">{{ formatDate(review.time) }}</p>
         </div>
       </div>
     </div>
@@ -37,50 +39,52 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+// Reactive variables
 const reviews = ref([])
-
-// Load from environment variables
-const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY
-const PLACE_ID = import.meta.env.VITE_PLACE_ID
+const loading = ref(true)
 
 // Helper to format timestamp
 const formatDate = (timestamp) => {
   if (!timestamp) return ''
-  // Google API returns Unix timestamp in seconds
   return new Date(timestamp * 1000).toLocaleDateString()
 }
 
+// Fallback reviews if API fails
+const fallbackReviews = [
+  { author_name: 'Jane D.', rating: 5, text: 'Amazing clinic!', time: 1688000000 },
+  { author_name: 'John S.', rating: 4, text: 'Professional staff.', time: 1687500000 },
+  { author_name: 'Emily R.', rating: 5, text: 'Highly recommend!', time: 1687000000 },
+]
+
+// Load reviews from serverless function
 onMounted(async () => {
+  loading.value = true
+
+  // Use environment variables to check if production API is available
+  const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY
+  const PLACE_ID = import.meta.env.VITE_PLACE_ID
+
   if (!API_KEY || !PLACE_ID) {
-    // Fallback mock reviews during development
-    reviews.value = [
-      { author_name: 'Jane D.', rating: 5, text: 'Amazing clinic!', time: 1688000000 },
-      { author_name: 'John S.', rating: 4, text: 'Professional staff.', time: 1687500000 },
-      { author_name: 'Emily R.', rating: 5, text: 'Highly recommend!', time: 1687000000 },
-    ]
+    reviews.value = fallbackReviews
+    loading.value = false
     return
   }
 
   try {
-    // Use a CORS proxy during development if needed
-    const proxy = 'https://cors-anywhere.herokuapp.com/'
-    const url = `${proxy}https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${API_KEY}`
-    const res = await fetch(url)
+    const res = await fetch('/api/reviews')
     const data = await res.json()
 
-    if (data.result?.reviews) {
-      reviews.value = data.result.reviews.slice(0, 5) // top 3 reviews
+    if (Array.isArray(data) && data.length > 0) {
+      reviews.value = data.slice(0, Math.min(data.length, 5)) // top 5 reviews
     } else {
       console.warn('No reviews found, using fallback')
-      reviews.value = [
-        { author_name: 'Jane D.', rating: 5, text: 'Amazing clinic!', time: 1688000000 },
-      ]
+      reviews.value = fallbackReviews
     }
   } catch (err) {
     console.error('Failed to fetch reviews:', err)
-    reviews.value = [
-      { author_name: 'Jane D.', rating: 5, text: 'Amazing clinic!', time: 1688000000 },
-    ]
+    reviews.value = fallbackReviews
+  } finally {
+    loading.value = false
   }
 })
 </script>
