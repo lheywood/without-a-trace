@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Custom theme tokens */
+@theme {
+  --color-primary: #8D8E79;
+  --color-secondary: #BBBBAE;
+  --color-accent: #989C8A;
+  --color-muted: #7D7D68;
+  --color-background: #EAEBE7;
+
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-heading: Poppins, system-ui, sans-serif;
+}
+
+/* Optional reusable components */
+@layer components {
+  .nav-link {
+    @apply text-sm font-medium text-gray-700 hover:text-[--color-primary];
+  }
+}
+
+.meie-script-regular {
+  font-family: "Meie Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #EAEBE7;
+  font-size: xx-large;
+}
+
+.poiret-one-regular {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
