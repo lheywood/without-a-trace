@@ -44,7 +44,8 @@
         </div>
       </div>
     </section>
-
+    
+      <GoogleReviews />
     <!-- TRUST / CREDENTIALS -->
     <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
@@ -167,3 +168,7 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import GoogleReviews from '../Components/GoogleReviews.vue'
+</script>

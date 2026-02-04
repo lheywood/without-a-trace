@@ -1,9 +1,14 @@
 import { createApp } from 'vue'
-import App from '../src/App.vue'
-import router from './router/index'
+import { createHead } from '@vueuse/head'
+import App from './App.vue'
+import router from './router'
 
-import '../src/assets/main.css'
+const app = createApp(App)
+const head = createHead()
+import './assets/main.css' // <-- Tailwind v4 import
 
-createApp(App)
-  .use(router)
-  .mount('#app')
+
+app.use(router)
+app.use(head)
+
+app.mount('#app')

@@ -79,4 +79,44 @@
 
 <script setup>
 import TreatmentCard from '../components/TreatmentCard.vue'
+import { useHead } from '@vueuse/head'
+
+
+useHead({
+  title: 'Aesthetic Treatments in Your City | Without A Trace Aesthetics',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Discover professional aesthetic treatments including wrinkle relaxants, dermal fillers, microneedling, skin boosters, Profhilo and chemical peels at Without A Trace Aesthetics.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'aesthetic clinic, wrinkle relaxants, dermal fillers, microneedling, profhilo, skin boosters, chemical peels'
+    }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": {
+          "@type": "MedicalBusiness",
+          "name": "Without A Trace Aesthetics"
+        },
+        "serviceType": [
+          "Wrinkle Relaxants",
+          "Dermal Fillers",
+          "Microneedling",
+          "Skin Boosters",
+          "Profhilo",
+          "Skin Peels"
+        ]
+      })
+    }
+  ]
+})
+
 </script>
