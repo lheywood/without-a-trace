@@ -61,8 +61,8 @@ onMounted(async () => {
   loading.value = true
 
   // Use environment variables to check if production API is available
-  const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY
-  const PLACE_ID = import.meta.env.VITE_PLACE_ID
+  const API_KEY = process.env.GOOGLE_API_KEY
+  const PLACE_ID = process.meta.env.PLACE_ID
 
   if (!API_KEY || !PLACE_ID) {
     reviews.value = fallbackReviews
