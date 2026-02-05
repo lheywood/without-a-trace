@@ -1,6 +1,4 @@
-import fetch from 'node-fetch'
 
-// /api/reviews.js
 export default async function handler(req, res) {
   try {
     const API_KEY = process.env.GOOGLE_API_KEY
@@ -12,6 +10,8 @@ export default async function handler(req, res) {
     }
 
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews&key=${API_KEY}`
+
+    // Node 18+ has native fetch, no import needed
     const response = await fetch(url)
     const data = await response.json()
 
@@ -25,4 +25,5 @@ export default async function handler(req, res) {
     res.status(500).json({ message: 'Server error' })
   }
 }
+
 
