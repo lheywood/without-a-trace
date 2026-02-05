@@ -62,7 +62,7 @@ onMounted(async () => {
 
   // Use environment variables to check if production API is available
   const API_KEY = process.env.GOOGLE_API_KEY
-  const PLACE_ID = process.meta.env.PLACE_ID
+  const PLACE_ID = process.env.PLACE_ID
 
   if (!API_KEY || !PLACE_ID) {
     reviews.value = fallbackReviews
