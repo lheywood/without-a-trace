@@ -53,7 +53,7 @@
           <img
             :src="traceyPowell"
             alt="Portrait of Tracey Powell"
-            class="w-120 md:w-80 object-cover rounded-lg"
+            class="w-60 md:w-80 object-cover rounded-lg"
           />
         </div>
         <div>
@@ -223,10 +223,9 @@
       </p>
 
       <button
-        @click="openContactWidget"
         class="inline-block px-8 py-4 rounded-full bg-white text-gray-900 font-medium
               transition-transform hover:scale-105"
-              data-openwidget-action="minimize"
+              data-openwidget-action="maximize"
   data-openwidget-feature="form-contact"
       >
         Book Consultation
@@ -243,32 +242,7 @@
 <script setup>
 import GoogleReviews from '../components/GoogleReviews.vue'
 import traceyPowell from '../assets/traceypowell.png'
-const openContactWidget = () => {
-  const ow = window.OpenWidget
-  if (!ow) return
 
-  // OpenWidget queue (array) – most common
-  if (Array.isArray(ow)) {
-    ow.push(['open'])
-    return
-  }
-
-  // Function-style API
-  if (typeof ow === 'function') {
-    ow('open')
-    return
-  }
-
-  // Object-style API (fallbacks)
-  if (typeof ow.toggle === 'function') return ow.toggle()
-  if (typeof ow.show === 'function') return ow.show()
-  if (typeof ow.openWidget === 'function') return ow.openWidget()
-
-  // Last resort: click launcher
-  document
-    .querySelector('#openwidget-launcher, .openwidget-launcher, [data-openwidget]')
-    ?.click()
-}
 
 
 
