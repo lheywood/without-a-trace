@@ -3,15 +3,17 @@
     <!-- Profile Image -->
     <section class="flex justify-center mb-10">
       <img
-        src="/src/assets/user.png"
-        alt="Portrait of [Your Name]"
-        class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-lg border-4 border-white"
-      />
+  :src="traceyPowell"
+  alt="Portrait of Tracey Powell"
+  class="w-60 md:w-60 aspect-square rounded-full object-cover object-[70%_50%] shadow-lg border-4 border-white"
+/>
+
+
     </section>
 
     <!-- Heading -->
     <section class="text-center mb-12">
-      <h1 class="font-heading text-xl md:text-4xl mb-4 text-gray-900">
+      <h1 class=" text-xl md:text-4xl mb-4 text-gray-900">
         Tracey Powell 
       </h1>
       <p class="text-gray-600 max-w-2xl mx-auto">
@@ -40,3 +42,7 @@
     </section>
   </main>
 </template>
+<script setup>
+import traceyPowell from '../assets/traceypowell.png'
+</script>
+

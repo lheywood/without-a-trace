@@ -22,17 +22,17 @@
       
       <!-- Desktop -->
       <div class="hidden md:flex items-center space-x-6">
-        <RouterLink to="/about" class="hover:text-gray-900">About</RouterLink>
-        <RouterLink to="/treatments" class="hover:text-gray-900">Treatments</RouterLink>
-        <RouterLink to="/gallery" class="hover:text-gray-900">Gallery</RouterLink>
+        <RouterLink to="/about" class="hover:text-gray-500">About</RouterLink>
+        <RouterLink to="/treatments" class="hover:text-gray-500">Treatments</RouterLink>
+        <RouterLink to="/gallery" class="hover:text-gray-500">Gallery</RouterLink>
 
-        <a href="https://www.facebook.com/profile.php?id=61576557208393" target="_blank" class="text-gray-50">
+        <a href="https://www.facebook.com/profile.php?id=61576557208393" target="_blank" class="text-gray-50 hover:text-gray-500">
           <i class="fa-brands fa-facebook text-lg"></i>
         </a>
-        <a href="mailto:withoutatrace0405@gmail.com" class="text-gray-50">
+        <a href="mailto:withoutatrace0405@gmail.com" class="text-gray-50 hover:text-gray-500">
           <i class="fa-solid fa-envelope text-lg"></i>
         </a>
-        <a href="https://www.instagram.com/withoutatraceaesthetics" target="_blank" class="text-gray-50">
+        <a href="https://www.instagram.com/withoutatraceaesthetics" target="_blank" class="text-gray-50 hover:text-gray-500">
           <i class="fa-brands fa-instagram text-lg"></i>
         </a>
       </div>
@@ -44,11 +44,38 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div v-if="mobileOpen" class="md:hidden mt-4 space-y-3 text-gray-100">
-      <RouterLink to="/treatments" class="block">Treatments</RouterLink>
-      <RouterLink to="/about" class="block">About</RouterLink>
-      <RouterLink to="/gallery" class="block">Gallery</RouterLink>
-    </div>
+    <div v-if="mobileOpen" class="md:hidden mt-4 space-y-2 text-gray-100">
+  <RouterLink
+    to="/treatments"
+    class="block rounded-lg px-3 py-2
+           transition-all duration-300 ease-out
+           hover:bg-white/5 hover:text-gray-50
+           md:hover:scale-105"
+  >
+    Treatments
+  </RouterLink>
+
+  <RouterLink
+    to="/about"
+    class="block rounded-lg px-3 py-2
+           transition-all duration-300 ease-out
+           hover:bg-white/5 hover:text-gray-50
+           md:hover:scale-105"
+  >
+    About
+  </RouterLink>
+
+  <RouterLink
+    to="/gallery"
+    class="block rounded-lg px-3 py-2
+           transition-all duration-300 ease-out
+           hover:bg-white/5 hover:text-gray-50
+           md:hover:scale-105"
+  >
+    Gallery
+  </RouterLink>
+</div>
+
   </nav>
 </template>
 

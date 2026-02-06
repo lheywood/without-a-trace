@@ -6,7 +6,7 @@
   >
     <!-- Card Header -->
     <div
-      class="h-5 flex items-center justify-center text-white font-bold text-xl text-center p-4 bg-muted"
+      class="h-5 flex items-center justify-center text-white font-bold text-xl text-center p-4 bg-primary zalando-sans-expanded"
     >
       {{ title }}
     </div>
@@ -14,6 +14,9 @@
     <!-- Description Preview -->
     <div class="p-6 flex flex-col flex-grow">
       <p class="text-gray-700 mb-4 line-clamp-3">{{ description }}</p>
+
+      
+
 
       <!-- Footer: From lowest price -->
       <div class="mt-auto border-t pt-2 text-gray-700 font-medium">
@@ -23,44 +26,83 @@
 
     <!-- Modal rendered outside the card using teleport -->
     <teleport to="body">
-      <div v-if="openModal" class="fixed inset-0 bg-gray-200  flex items-center justify-center z-50">
-        <!-- Click outside to close -->
-        <div class="absolute inset-0" @click="openModal = false"></div>
-
-        <!-- Modal Content -->
+      <div
+        v-if="openModal"
+        class="fixed inset-0 z-50 flex items-center justify-center"
+      >
+        <!-- Backdrop -->
         <div
-          class="bg-white rounded-xl w-11/12 md:w-2/3 lg:w-1/2 overflow-hidden shadow-xl relative z-10"
+          class="absolute inset-0 bg-black/40 backdrop-blur-sm"
+          @click="openModal = false"
+        ></div>
+
+        <!-- Modal -->
+        <div
+          class="relative z-10 w-11/12 md:w-2/3 lg:w-1/2 max-h-[85vh] overflow-y-auto
+                bg-white rounded-2xl shadow-2xl"
           @click.stop
         >
           <!-- Close Button -->
           <button
             @click="openModal = false"
-            class="absolute top-3 right-4 text-gray-100 hover:text-gray-00 text-3xl font-bold"
+            class="absolute top-4 right-5 text-gray-400 hover:text-gray-700
+                  text-2xl transition"
             aria-label="Close modal"
           >
             &times;
           </button>
 
-          <!-- Modal Header -->
-          <div class="h-15 flex items-center justify-center text-white font-bold text-2xl text-center p-4 bg-muted">
-            {{ title }}
+          <!-- Header -->
+          <div class="px-8 py-6 border-b">
+            <h2 class="text-2xl font-heading text-gray-900 bg-pr text-center">
+              {{ title }}
+            </h2>
           </div>
 
-          <!-- Modal Body -->
-          <div class="p-6">
-            <p class="text-gray-700 mb-4">{{ fullDescription }}</p>
+          <!-- Body -->
+          <div class="p-8 space-y-6">
+            <p class="text-gray-700 leading-relaxed">
+              {{ fullDescription }}
+            </p>
 
-            <!-- Prices only in modal -->
-            <ul v-if="Array.isArray(props.prices)" class="space-y-2 text-gray-700 mb-4">
-              <li v-for="(item, index) in props.prices" :key="index">{{ item }}</li>
-            </ul>
-            <p v-else class="text-gray-700 mb-4">{{ props.prices }}</p>
+            <!-- Benefits -->
+            <div v-if="props.benefits.length">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                Benefits
+              </h3>
 
-            
+              <ul class="space-y-2 text-gray-700">
+                <li
+                  v-for="(benefit, index) in props.benefits"
+                  :key="index"
+                  class="flex items-start gap-2"
+                >
+                  <span class="mt-1 h-2 w-2 rounded-full bg-muted"></span>
+                  <span>{{ benefit }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Prices -->
+            <div class="pt-4 border-t">
+              <ul
+                v-if="Array.isArray(props.prices)"
+                class="space-y-2 text-gray-800 font-medium"
+              >
+                <li v-for="(item, index) in props.prices" :key="index">
+                  {{ item }}
+                </li>
+              </ul>
+
+              <p v-else class="text-gray-800 font-medium">
+                {{ props.prices }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </teleport>
+
   </div>
 </template>
 
@@ -72,6 +114,10 @@ const props = defineProps({
   description: String,
   fullDescription: String,
   prices: [Array, String],
+  benefits: {
+    type: Array,
+    default: () => []
+  },
   from: {
     type: String,
     default: ''

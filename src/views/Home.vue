@@ -20,53 +20,137 @@
             natural beauty and restore confidence.
           </p>
 
-          <div class="flex gap-4">
-              <RouterLink
-                to="/about"
-                class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white"
-              >
-                About
-              </RouterLink>
-            <RouterLink
-              to="/treatments"
-              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white"
-            >
-              View Treatments
-            </RouterLink>
-            <RouterLink
-              to="/gallery"
-              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white"
-            >
-              Gallery
-            </RouterLink>
+          <div class="flex flex-col sm:flex-row gap-4">
+  <RouterLink
+    to="/about"
+    class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+  >
+    About
+  </RouterLink>
 
-          </div>
+  <RouterLink
+    to="/treatments"
+    class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+  >
+    View Treatments
+  </RouterLink>
+
+  <RouterLink
+    to="/gallery"
+    class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+  >
+    Gallery
+  </RouterLink>
+</div>
+
         </div>
       </div>
     </section>
-    
-      <GoogleReviews />
+    <!-- ABOUT TEASER -->
+    <section class="py-20 bg-gray-100">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="h-80 flex items-center justify-center">
+          <img
+            :src="traceyPowell"
+            alt="Portrait of Tracey Powell"
+            class="w-120 md:w-80 object-cover rounded-lg"
+          />
+        </div>
+        <div>
+          <h2 class="font-heading text-3xl mb-4">Meet Your Practitioner</h2>
+          <p class="text-gray-600 mb-6">
+            With a commitment to safety, precision, and personalised care,
+            every client journey begins with trust.
+          </p>
+
+          <RouterLink
+            to="/about"
+            class="inline-block px-6 py-3 rounded-full bg-primary text-white"
+          >
+            Learn More
+          </RouterLink>
+        </div>
+    </div>
+  </section>
+    <GoogleReviews />
     <!-- TRUST / CREDENTIALS -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gray-100">
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
         <div>
-          <div class="h-16 w-16 mx-auto mb-4 bg-gray-200 rounded-full"></div>
+          <div class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-7 w-7 text-gray-700"
+            >
+              <!-- plunger top -->
+              <path d="M9 3h6" />
+              <path d="M12 3v4" />
+
+              <!-- barrel -->
+              <rect x="9" y="7" width="6" height="9" rx="1" />
+
+              <!-- needle (perfectly vertical) -->
+              <path d="M12 16v6" />
+            </svg>
+          </div>
+
           <h3 class="font-medium mb-2">Certified Practitioner</h3>
           <p class="text-sm text-gray-600">
             Fully qualified with industry-recognized certifications.
           </p>
         </div>
 
+       <div>
         <div>
-          <div class="h-16 w-16 mx-auto mb-4 bg-gray-200 rounded-full"></div>
-          <h3 class="font-medium mb-2">Personalised Care</h3>
+          <!-- Icon -->
+          <div class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="h-7 w-7 text-gray-700"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 9l4.5-5h9L21 9l-9 11-9-11z"
+              />
+            </svg>
+          </div>
+
+          <h3 class="font-medium mb-2">Wedding Packages</h3>
           <p class="text-sm text-gray-600">
-            Every treatment plan is tailored to your skin.
+            Bespoke packages designed to enhance your natural beauty for your special day.
           </p>
         </div>
+      </div>
+
+
 
         <div>
-          <div class="h-16 w-16 mx-auto mb-4 bg-gray-200 rounded-full"></div>
+          <div class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-7 w-7 text-gray-700"
+            >
+              <path d="M5 12l4 4L19 6" />
+            </svg>
+          </div>
+
           <h3 class="font-medium mb-2">Results-Focused</h3>
           <p class="text-sm text-gray-600">
             Natural, refined outcomes with proven techniques.
@@ -99,9 +183,9 @@
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="h-48 bg-gray-300"></div>
             <div class="p-6">
-              <h3 class="font-medium mb-2">Dermal Fillers</h3>
+              <h3 class="font-medium mb-2">Polynucleotides</h3>
               <p class="text-sm text-gray-600">
-                Rejuvenate features with smoother lines and restored volume
+                Skin-repair treatment improving texture, hydration, and radiance
               </p>
             </div>
           </div>
@@ -120,55 +204,72 @@
         <div class="text-center mt-12">
           <RouterLink
             to="/treatments"
-            class="inline-block px-6 py-3 rounded-full border border-gray-300"
+            class="inline-block px-6 py-3 rounded-full border border-gray-300
+                  transition-all duration-300 ease-out
+                  hover:scale-105 hover:bg-primary hover:text-white hover:border-primary"
           >
             Explore All Treatments
           </RouterLink>
         </div>
       </div>
     </section>
-
-    <!-- ABOUT TEASER -->
-    <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div class="h-80 bg-gray-300 rounded-xl"></div>
-
-        <div>
-          <h2 class="font-heading text-3xl mb-4">Meet Your Practitioner</h2>
-          <p class="text-gray-600 mb-6">
-            With a commitment to safety, precision, and personalised care,
-            every client journey begins with trust.
-          </p>
-
-          <RouterLink
-            to="/about"
-            class="inline-block px-6 py-3 rounded-full bg-[--color-primary] text-white"
-          >
-            Learn More
-          </RouterLink>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA -->
-    <section class="py-20 bg-gray-900 text-white text-center">
+    <section class="py-20 bg-primary text-white text-center">
       <h2 class="font-heading text-3xl mb-4">
         Begin Your Skin Journey
       </h2>
-      <p class="text-gray-300 mb-8">
+      <p class="mb-8">
         Book a consultation and take the first step towards confident skin.
       </p>
 
-      <a
-        href="#"
-        class="inline-block px-8 py-4 rounded-full bg-white text-gray-900 font-medium"
+      <button
+        @click="openContactWidget"
+        class="inline-block px-8 py-4 rounded-full bg-white text-gray-900 font-medium
+              transition-transform hover:scale-105"
+              data-openwidget-action="minimize"
+  data-openwidget-feature="form-contact"
       >
         Book Consultation
-      </a>
+      </button>
     </section>
+
+    
+
+    
+
   </main>
 </template>
 
 <script setup>
 import GoogleReviews from '../components/GoogleReviews.vue'
+import traceyPowell from '../assets/traceypowell.png'
+const openContactWidget = () => {
+  const ow = window.OpenWidget
+  if (!ow) return
+
+  // OpenWidget queue (array) – most common
+  if (Array.isArray(ow)) {
+    ow.push(['open'])
+    return
+  }
+
+  // Function-style API
+  if (typeof ow === 'function') {
+    ow('open')
+    return
+  }
+
+  // Object-style API (fallbacks)
+  if (typeof ow.toggle === 'function') return ow.toggle()
+  if (typeof ow.show === 'function') return ow.show()
+  if (typeof ow.openWidget === 'function') return ow.openWidget()
+
+  // Last resort: click launcher
+  document
+    .querySelector('#openwidget-launcher, .openwidget-launcher, [data-openwidget]')
+    ?.click()
+}
+
+
+
 </script>
