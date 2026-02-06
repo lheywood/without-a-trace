@@ -1,21 +1,21 @@
 <template>
   <main>
     <!-- HERO -->
-    <section class="relative min-h-[90vh] flex items-center poiret-one-regular">
+    <section class="relative min-h-[90vh] flex items-center ">
       <!-- Background image placeholder -->
-      <div class="absolute inset-0 bg-primary">
+      <div class="absolute inset-0 bg-white">
         <!-- Replace with image later -->
-        <div class="w-full h-full bg-primary"></div>
+        <div class="w-full h-full bg-white"></div>
       </div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-6">
         <div class="max-w-2xl">
-          <h1 class="font-heading text-4xl md:text-5xl leading-tight text-gray-100 mb-6">
+          <h1 class="font-heading text-4xl md:text-4xl leading-tight text-primary-100 mb-6 zalando-sans-expanded">
             Without A Trace Aesthetics <br />
             Tailored to You
           </h1>
 
-          <p class="text-neutral-700 mb-8">
+          <p class="text-neutral-700 mb-8 zalando-sans-expanded">
             Professional, results-driven treatments designed to enhance
             natural beauty and restore confidence.
           </p>
@@ -23,19 +23,19 @@
           <div class="flex gap-4">
               <RouterLink
                 to="/about"
-                class="px-6 py-3 rounded-full border border-gray-100 text-gray-100"
+                class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white"
               >
                 About
               </RouterLink>
             <RouterLink
               to="/treatments"
-              class="px-6 py-3 rounded-full border border-gray-100 text-gray-100"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white"
             >
               View Treatments
             </RouterLink>
             <RouterLink
               to="/gallery"
-              class="px-6 py-3 rounded-full border border-gray-100 text-gray-100"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white"
             >
               Gallery
             </RouterLink>
@@ -89,7 +89,7 @@
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="h-48 bg-gray-300"></div>
             <div class="p-6">
-              <h3 class="font-medium mb-2">Facial Aesthetics</h3>
+              <h3 class="font-medium mb-2">Wrinkle Relaxants</h3>
               <p class="text-sm text-gray-600">
                 Subtle enhancements for natural results.
               </p>
@@ -99,9 +99,9 @@
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="h-48 bg-gray-300"></div>
             <div class="p-6">
-              <h3 class="font-medium mb-2">Skin Rejuvenation</h3>
+              <h3 class="font-medium mb-2">Dermal Fillers</h3>
               <p class="text-sm text-gray-600">
-                Improve texture, tone, and radiance.
+                Rejuvenate features with smoother lines and restored volume
               </p>
             </div>
           </div>
@@ -109,9 +109,9 @@
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="h-48 bg-gray-300"></div>
             <div class="p-6">
-              <h3 class="font-medium mb-2">Advanced Treatments</h3>
+              <h3 class="font-medium mb-2">Microneedling</h3>
               <p class="text-sm text-gray-600">
-                Science-backed solutions for lasting results.
+                Improve texture, tone, and overall skin radiance.
               </p>
             </div>
           </div>

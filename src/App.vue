@@ -1,10 +1,14 @@
 <template>
+  <div class="zalando-sans-expanded">
   <Navbar />
   
   <!-- Page content -->
   <router-view />
 
-  <Footer />
+  <Footer />`
+
+  </div>
+  
 </template>
 
 <script setup>
@@ -27,7 +31,7 @@ useHead({
       type: 'application/ld+json',
       children: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "MedicalBusiness",
+        "@type": "AestheticClinic",
         "name": "Without A Trace Aesthetics",
         "url": "https://withoutatraceaesthetics.co.uk",
         "logo": "https://withoutatraceaesthetics.co.uk/logo.jpg",

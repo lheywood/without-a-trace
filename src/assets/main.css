@@ -2,14 +2,14 @@
 
 /* Custom theme tokens */
 @theme {
-  --color-primary: #8D8E79;
+  --color-primary: #979d8a;
   --color-secondary: #BBBBAE;
   --color-accent: #989C8A;
   --color-muted: #7D7D68;
   --color-background: #EAEBE7;
 
-  --font-sans: Inter, system-ui, sans-serif;
-  --font-heading: Poppins, system-ui, sans-serif;
+  --font-sans: Inter,  sans-serif;
+  --font-heading: Poppins,  sans-serif;
 }
 
 /* Optional reusable components */
@@ -19,17 +19,11 @@
   }
 }
 
-.meie-script-regular {
-  font-family: "Meie Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: #EAEBE7;
-  font-size: xx-large;
-}
 
-.poiret-one-regular {
-  font-family: "Poiret One", sans-serif;
-  font-weight: 400;
+
+.zalando-sans-expanded {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
   font-style: normal;
 }
-

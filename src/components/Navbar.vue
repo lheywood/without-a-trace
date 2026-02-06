@@ -2,12 +2,23 @@
   <nav class="sticky top-0 z-50 bg-primary/95 backdrop-blur shadow px-4 py-3">
     <div class="max-w-7xl mx-auto flex justify-between items-center text-gray-50">
 
-      <!-- Logo -->
-      <div class="text-xl font-bold">
-        <RouterLink to="/" class="hover:text-white-900 text-xl poiret-one-regular text-gray-50">
-          Without a Trace Aesthetics
-        </RouterLink>
-      </div>
+  <!-- Logo -->
+<div class="flex items-center gap-3">
+  <RouterLink
+    to="/"
+    class="flex items-center gap-3 hover:opacity-90 text-gray-50"
+  >
+    <img
+      :src="logo"
+      alt="Without a Trace Aesthetics logo"
+      class="h-30 w-30 rounded-full object-cover bg-white "
+    />
+    <span class="hidden sm:inline text-xl zalando-sans-expanded font-bold">
+      Without a Trace Aesthetics
+    </span>
+  </RouterLink>
+</div>
+
       
       <!-- Desktop -->
       <div class="hidden md:flex items-center space-x-6">
@@ -43,6 +54,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import logo from "../assets/logo_nobackground.png"
 
 const mobileOpen = ref(false)
 </script>
