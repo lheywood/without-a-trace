@@ -25,21 +25,21 @@
           <div class="flex flex-col sm:flex-row gap-4">
             <RouterLink
               to="/about"
-              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center hover:scale-105 hover:opacity-75"
             >
               About
             </RouterLink>
 
             <RouterLink
               to="/treatments"
-              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center hover:scale-105 hover:opacity-75"
             >
               View Treatments
             </RouterLink>
 
             <RouterLink
               to="/gallery"
-              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center hover:scale-105 hover:opacity-75"
             >
               Gallery
             </RouterLink>
