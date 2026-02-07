@@ -17,28 +17,33 @@
         Tracey Powell 
       </h1>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        👩🏻‍⚕️ Midwife 🩺 25+ yrs experience
+        👩🏻‍⚕️ Midwife 🩺 20+ yrs experience
       </p>
     </section>
 
     <!-- Content -->
     <section class="space-y-8 text-gray-700 leading-relaxed">
       <p>
-        I’m a passionate practitioner with a focus on helping clients feel
-        confident, balanced, and well cared for. My work is grounded in both
-        experience and continual learning.
+        I have been a Midwife for over 20 years and have always been fully committed to helping people feel their best while supporting them to make safe, 
+        well-informed choices about their care.
+
+      </p>
+      <p>
+        Throughout my midwifery career, I have worked in a variety of roles including Senior Midwife, Practice Development Midwife, hospital-based practice and community care. 
+        I have worked in several hospitals and gained a wide range of experience caring for women and families. 
+        I am passionate about keeping my knowledge and skills up to date through regular training, study and professional development.
+      </p>
+      <p>
+        My move into the aesthetics industry felt like a natural step. I have always had a strong interest in skin health, especially as someone who has personally struggled with sensitive skin for most of my life. This allows me to genuinely understand how skin concerns can affect confidence and wellbeing. I am committed to using premium, evidence-based products and treatments to achieve natural, safe and effective results.
+        </p>
+      <p>
+        I pride myself on being approachable, friendly and honest, ensuring every client feels comfortable, listened to and fully informed before choosing treatment.
+      </p>
+      <p>
+        Outside of work, I love socialising, spending time with my family and keeping active. I enjoy walking (especially with my dog), swimming, and attending pump and spin classes when I can. I have also recently become a Nana, and I am looking forward to spending lots of my spare time with gorgeous little Charlie.
       </p>
 
-      <p>
-        Over the years, I’ve developed a personalized approach that combines
-        proven techniques with thoughtful, client-centered care. Every
-        treatment is tailored to individual needs.
-      </p>
-
-      <p>
-        When I’m not working with clients, I enjoy spending time with my grandson Charlie,
-        walking my dog Rocco, and chit chatting with my daughter.
-      </p>
+      
     </section>
   </main>
 </template>

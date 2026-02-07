@@ -19,6 +19,7 @@
           full-description="Wrinkle relaxants are a prescription-only injectable treatment commonly used to reduce dynamic lines caused by repeated facial movement, such as frown lines, forehead lines, and crow’s feet. By temporarily relaxing specific muscles, the skin above appears smoother and more youthful without looking “frozen” or overdone.
 
           This treatment is highly precise and tailored to each individual’s facial anatomy, muscle strength, and aesthetic goals. Results develop gradually and are designed to enhance your natural features rather than alter them."
+          
           :prices="['1 Area — £130', '2 Areas — £160', '3 Areas — £205', 'Lip Flip — £120']"
           :benefits="[
             'Softens fine lines and wrinkles',
@@ -35,9 +36,9 @@
         <TreatmentCard
           title="Polynucleotide"
           description="Polynucleotide treatments support skin repair and rejuvenation, improving texture, hydration, and overall skin quality for a fresher, healthier look."
-
-          fullDescription="Polynucleotides are injectable skin-rejuvenation treatments designed to improve skin quality by supporting repair, hydration, and elasticity. Rather than adding volume, they work within the skin to promote a healthier skin environment—helping to refine texture, improve radiance, and soften the look of fine lines. Treatments are tailored to your skin concerns and are commonly used for delicate areas such as the face, under-eyes, neck, and décolletage."
-          :prices="['1 Session — £125', '2 Sessions — £240', '3 Session — £325']"
+          subtitle="For Face, under eye, neck and décolletage.",
+          fullDescription="Polynucleotides are injectable skin-rejuvenation treatments designed to improve skin quality by supporting repair, hydration, and elasticity. Rather than adding volume, they work within the skin to promote a healthier skin environmenthelping to refine texture, improve radiance, and soften the look of fine lines. Treatments are tailored to your skin concerns and are commonly used for delicate areas such as the face, under-eyes, neck, and décolletage."
+          :prices="['1 Session - £125', '2 Sessions - £240', '3 Session -£325']"
           :benefits="[
             'Improves skin texture, tone, and overall radiance',
             'Supports skin repair and strengthens the skin barrier',

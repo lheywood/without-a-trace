@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- HERO -->
-    <section class="relative min-h-[90vh] flex items-center ">
+    <section class="relative min-h-[90vh] flex items-center">
       <!-- Background image placeholder -->
       <div class="absolute inset-0 bg-white">
         <!-- Replace with image later -->
@@ -10,45 +10,48 @@
 
       <div class="relative z-10 max-w-6xl mx-auto px-6">
         <div class="max-w-2xl">
-          <h1 class="font-heading text-4xl md:text-4xl leading-tight text-primary-100 mb-6 zalando-sans-expanded">
+          <h1
+            class="font-heading text-4xl md:text-4xl leading-tight text-primary-100 mb-6 zalando-sans-expanded"
+          >
             Without A Trace Aesthetics <br />
             Tailored to You
           </h1>
 
           <p class="text-neutral-700 mb-8 zalando-sans-expanded">
-            Professional, results-driven treatments designed to enhance
-            natural beauty and restore confidence.
+            Professional, results-driven treatments designed to enhance natural
+            beauty and restore confidence.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4">
-  <RouterLink
-    to="/about"
-    class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
-  >
-    About
-  </RouterLink>
+            <RouterLink
+              to="/about"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+            >
+              About
+            </RouterLink>
 
-  <RouterLink
-    to="/treatments"
-    class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
-  >
-    View Treatments
-  </RouterLink>
+            <RouterLink
+              to="/treatments"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+            >
+              View Treatments
+            </RouterLink>
 
-  <RouterLink
-    to="/gallery"
-    class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
-  >
-    Gallery
-  </RouterLink>
-</div>
-
+            <RouterLink
+              to="/gallery"
+              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center"
+            >
+              Gallery
+            </RouterLink>
+          </div>
         </div>
       </div>
     </section>
     <!-- ABOUT TEASER -->
     <section class="py-20 bg-gray-100">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div
+        class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
+      >
         <div class="h-80 flex items-center justify-center">
           <img
             :src="traceyPowell"
@@ -59,8 +62,8 @@
         <div>
           <h2 class="font-heading text-3xl mb-4">Meet Your Practitioner</h2>
           <p class="text-gray-600 mb-6">
-            With a commitment to safety, precision, and personalised care,
-            every client journey begins with trust.
+            With a commitment to safety, precision, and personalised care, every
+            client journey begins with trust.
           </p>
 
           <RouterLink
@@ -70,14 +73,16 @@
             Learn More
           </RouterLink>
         </div>
-    </div>
-  </section>
+      </div>
+    </section>
     <GoogleReviews />
     <!-- TRUST / CREDENTIALS -->
     <section class="py-16 bg-gray-100">
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
         <div>
-          <div class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white">
+          <div
+            class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -106,37 +111,40 @@
           </p>
         </div>
 
-       <div>
         <div>
-          <!-- Icon -->
-          <div class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="h-7 w-7 text-gray-700"
+          <div>
+            <!-- Icon -->
+            <div
+              class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 9l4.5-5h9L21 9l-9 11-9-11z"
-              />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="h-7 w-7 text-gray-700"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 9l4.5-5h9L21 9l-9 11-9-11z"
+                />
+              </svg>
+            </div>
+
+            <h3 class="font-medium mb-2">Wedding Packages</h3>
+            <p class="text-sm text-gray-600">
+              Bespoke packages designed to enhance your natural beauty for your
+              special day.
+            </p>
           </div>
-
-          <h3 class="font-medium mb-2">Wedding Packages</h3>
-          <p class="text-sm text-gray-600">
-            Bespoke packages designed to enhance your natural beauty for your special day.
-          </p>
         </div>
-      </div>
-
-
 
         <div>
-          <div class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white">
+          <div
+            class="h-16 w-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-white"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -171,7 +179,14 @@
 
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div class="h-48 bg-gray-300"></div>
+            <div class="h-48 overflow-hidden rounded-t-xl">
+              <img
+                :src="wr"
+                alt="Wrinkle Relaxant"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
             <div class="p-6">
               <h3 class="font-medium mb-2">Wrinkle Relaxants</h3>
               <p class="text-sm text-gray-600">
@@ -181,7 +196,11 @@
           </div>
 
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div class="h-48 bg-gray-300"></div>
+            <div
+              class="h-48 overflow-hidden rounded-t-xl flex items-center justify-center"
+            >
+              <img :src="pol" alt="" class="w-auto h-full" />
+            </div>
             <div class="p-6">
               <h3 class="font-medium mb-2">Polynucleotides</h3>
               <p class="text-sm text-gray-600">
@@ -191,7 +210,15 @@
           </div>
 
           <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div class="h-48 bg-gray-300"></div>
+            <div
+              class="h-48 overflow-hidden rounded-t-xl flex items-center justify-center"
+            >
+              <img
+                :src="mic"
+                alt="Treatment image"
+                class="w-auto h-full scale-90"
+              />
+            </div>
             <div class="p-6">
               <h3 class="font-medium mb-2">Microneedling</h3>
               <p class="text-sm text-gray-600">
@@ -204,9 +231,7 @@
         <div class="text-center mt-12">
           <RouterLink
             to="/treatments"
-            class="inline-block px-6 py-3 rounded-full border border-gray-300
-                  transition-all duration-300 ease-out
-                  hover:scale-105 hover:bg-primary hover:text-white hover:border-primary"
+            class="inline-block px-6 py-3 rounded-full border border-gray-300 transition-all duration-300 ease-out hover:scale-105 hover:bg-primary hover:text-white hover:border-primary"
           >
             Explore All Treatments
           </RouterLink>
@@ -215,35 +240,26 @@
     </section>
     <!-- CTA -->
     <section class="py-20 bg-primary text-white text-center">
-      <h2 class="font-heading text-3xl mb-4">
-        Begin Your Skin Journey
-      </h2>
+      <h2 class="font-heading text-3xl mb-4">Begin Your Skin Journey</h2>
       <p class="mb-8">
         Book a consultation and take the first step towards confident skin.
       </p>
 
       <button
-        class="inline-block px-8 py-4 rounded-full bg-white text-gray-900 font-medium
-              transition-transform hover:scale-105"
-              data-openwidget-action="maximize"
-  data-openwidget-feature="form-contact"
+        class="inline-block px-8 py-4 rounded-full bg-white text-gray-900 font-medium transition-transform hover:scale-105"
+        data-openwidget-action="maximize"
+        data-openwidget-feature="form-contact"
       >
         Book Consultation
       </button>
     </section>
-
-    
-
-    
-
   </main>
 </template>
 
 <script setup>
-import GoogleReviews from '../components/GoogleReviews.vue'
-import traceyPowell from '../assets/traceypowell.png'
-
-
-
-
+import GoogleReviews from "../components/GoogleReviews.vue";
+import traceyPowell from "../assets/traceypowell.png";
+import mic from "../assets/microneedlingpen.png";
+import pol from "../assets/polynucleotides.png";
+import wr from "../assets/wrinklerelaxant.jpg";
 </script>
