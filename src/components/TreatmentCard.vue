@@ -61,6 +61,9 @@
 
           <!-- Body -->
           <div class="p-8 space-y-6">
+            <small class="text-gray-500 leading-relaxed">
+              {{ subtitle }}
+            </small>
             <p class="text-gray-700 leading-relaxed">
               {{ fullDescription }}
             </p>
@@ -99,6 +102,20 @@
               </p>
             </div>
           </div>
+          <!-- Card Footer -->
+          <div class="border-t px-6 py-4">
+            <button
+              type="button"
+
+              class="w-full rounded-full px-5 py-3
+                    bg-primary text-white font-medium
+                    transition-all duration-300 ease-out
+                    hover:opacity-95 hover:scale-105"
+            >
+              Get Help
+            </button>
+          </div>
+
         </div>
       </div>
     </teleport>
@@ -111,6 +128,7 @@ import { ref } from 'vue'
 
 const props = defineProps({
   title: String,
+  subtitle: String,
   description: String,
   fullDescription: String,
   prices: [Array, String],
@@ -125,6 +143,9 @@ const props = defineProps({
 })
 
 const openModal = ref(false)
+
+
+
 </script>
 
 <style>
