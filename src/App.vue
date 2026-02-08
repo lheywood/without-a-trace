@@ -1,5 +1,6 @@
 <template>
   <div class="zalando-sans-expanded">
+    <Analytics />
     <Navbar />
 
     <!-- Page content -->
@@ -38,6 +39,7 @@
 </template>
 
 <script setup>
+import { Analytics } from '@vercel/analytics/vue';
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 
