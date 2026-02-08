@@ -10,7 +10,7 @@
   <!-- Contact Us Pill -->
   <button
     type="button"
-    class="fixed bottom-5 right-5 z-[60] inline-flex items-center gap-2 rounded-full px-5 py-3 bg-primary/95 text-gray-50 shadow-lg ring-1 ring-black/5 backdrop-blur transition-all duration-300 ease-out hover:scale-105 hover:opacity-75 active:scale-100"
+    class="fixed bottom-5 right-5 z-60 inline-flex items-center gap-2 rounded-full px-5 py-3 bg-primary/95 text-gray-50 shadow-lg ring-1 ring-black/5 backdrop-blur transition-all duration-300 ease-out hover:scale-105 hover:opacity-75 active:scale-100"
     aria-label="Contact Us"
     data-openwidget-action="maximize"
     data-openwidget-feature="form-contact"
