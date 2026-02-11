@@ -7,7 +7,6 @@ const routes = [
   '/',
   '/treatments',
   '/about',
-  '/gallery'
 ]
 
 const sitemap = new SitemapStream({ hostname })

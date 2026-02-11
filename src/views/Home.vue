@@ -37,12 +37,7 @@
               View Treatments
             </RouterLink>
 
-            <RouterLink
-              to="/gallery"
-              class="px-6 py-3 rounded-full border bg-primary border-gray-100 text-white text-center hover:scale-105 hover:opacity-75"
-            >
-              Gallery
-            </RouterLink>
+            
           </div>
         </div>
       </div>

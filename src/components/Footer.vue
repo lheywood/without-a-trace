@@ -16,7 +16,6 @@
         <ul class="space-y-2 text-sm text-gray-600">
           <li><RouterLink to="/" class="hover:text-[--color-primary]">Home</RouterLink></li>
           <li><RouterLink to="/treatments" class="hover:text-[--color-primary]">Treatments</RouterLink></li>
-          <li><RouterLink to="/gallery" class="hover:text-[--color-primary]">Gallery</RouterLink></li>
           <li><RouterLink to="/about" class="hover:text-[--color-primary]">About</RouterLink></li>
         </ul>
       </div>
