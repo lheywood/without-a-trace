@@ -12,14 +12,12 @@
       <!-- Treatments Grid -->
       <div class="grid md:grid-cols-3 gap-8">
 
-        <!-- Wrinkle Relaxants -->
         <TreatmentCard
+          slug="wrinkle-relaxants"
+          :forceOpen="activeTreatment  === 'wrinkle-relaxants'"
+          @modalClosed="clearTreatmentQuery"
           title="Wrinkle Relaxants"
-          description="Wrinkle relaxant treatments soften the appearance of fine lines and wrinkles by gently relaxing targeted facial muscles, creating a smoother, more refreshed look while preserving natural expression."
-          full-description="Wrinkle relaxants are a prescription-only injectable treatment commonly used to reduce dynamic lines caused by repeated facial movement, such as frown lines, forehead lines, and crow’s feet. By temporarily relaxing specific muscles, the skin above appears smoother and more youthful without looking “frozen” or overdone.
-
-          This treatment is highly precise and tailored to each individual’s facial anatomy, muscle strength, and aesthetic goals. Results develop gradually and are designed to enhance your natural features rather than alter them."
-          
+          description="Wrinkle relaxant treatments soften the appearance..."
           :prices="['1 Area — £130', '2 Areas — £160', '3 Areas — £205', 'Lip Flip — £120']"
           :benefits="[
             'Softens fine lines and wrinkles',
@@ -35,8 +33,10 @@
         <!-- Dermal Fillers -->
         <TreatmentCard
           title="Polynucleotide"
+          slug="polynucleotide"
+          :forceOpen="activeTreatment  === 'polynucleotide'"
           description="Polynucleotide treatments support skin repair and rejuvenation, improving texture, hydration, and overall skin quality for a fresher, healthier look."
-          subtitle="For Face, under eye, neck and décolletage.",
+          subtitle="For face, under eye, neck and décolletage.",
           fullDescription="Polynucleotides are injectable skin-rejuvenation treatments designed to improve skin quality by supporting repair, hydration, and elasticity. Rather than adding volume, they work within the skin to promote a healthier skin environmenthelping to refine texture, improve radiance, and soften the look of fine lines. Treatments are tailored to your skin concerns and are commonly used for delicate areas such as the face, under-eyes, neck, and décolletage."
           :prices="['1 Session - £125', '2 Sessions - £240', '3 Session -£325']"
           :benefits="[
@@ -56,8 +56,9 @@
         <!-- Microneedling -->
         <TreatmentCard
           title="Microneedling"
+          slug="microneedling"
           description="Microneedling stimulates collagen production to improve skin texture, tone, and overall radiance."
-
+          :forceOpen="activeTreatment  === 'microneedling'"
           fullDescription="Microneedling is a minimally invasive skin treatment that uses fine, medical-grade needles to create controlled micro-injuries in the skin. This process stimulates the body’s natural collagen and elastin production, helping to improve skin texture, firmness, and clarity. It is suitable for a range of skin concerns and can be tailored to your individual skin goals."
           :benefits="[
             'Improves skin texture and smoothness',
@@ -75,6 +76,7 @@
         <!-- Skin Boosters -->
         <TreatmentCard
           title="Skin Boosters"
+          slug="skinbootser"
           description="Skin boosters deeply hydrate and revitalise the skin, improving texture, elasticity, and overall glow from within."
           fullDescription="Skin boosters are injectable treatments designed to improve skin quality rather than alter facial shape. They work by delivering hydrating and skin-strengthening ingredients directly into the skin, helping to enhance elasticity, smoothness, and radiance. This treatment is ideal for dull, dehydrated, or ageing skin and is tailored to your individual skin needs."
 
@@ -93,6 +95,7 @@
         <!-- Profhilo -->
         <TreatmentCard
           title="Profhilo"
+          slug="profhilo"
           description="Profhilo is a unique injectable treatment that deeply hydrates the skin while improving firmness, elasticity, and overall skin quality."
 
           fullDescription="Profhilo is an advanced injectable treatment containing a high concentration of hyaluronic acid designed to improve skin quality rather than add volume. It works by stimulating collagen and elastin production while providing intense hydration, resulting in firmer, smoother, and more radiant skin. Profhilo is ideal for treating skin laxity and improving overall skin texture in a natural, subtle way."
@@ -112,6 +115,7 @@
         <!-- Skin Peels -->
         <TreatmentCard
           title="Skin Peels"
+          slug="skinpeel"
           description="Skin peels refresh and resurface the skin to improve tone, texture, and clarity for a brighter, smoother complexion."
 
           fullDescription="Skin peels are professional exfoliating treatments that use carefully selected acids to remove dead skin cells and stimulate cell renewal. They help improve a range of skin concerns including dullness, uneven tone, congestion, and fine lines. Treatments are tailored to your skin type and concerns to achieve safe, effective, and visible results."
@@ -132,25 +136,63 @@
     </div>
   </section>
 </template>
-
 <script setup>
 import TreatmentCard from '../components/TreatmentCard.vue'
 import { useHead } from '@vueuse/head'
+import { useRoute, useRouter } from 'vue-router'
+import { computed } from 'vue'
+import { ref, watch } from 'vue'
 
+const props = defineProps({
+  slug: { type: String, required: false },
+  forceOpen: { type: Boolean, default: false },
+
+  // your existing props:
+  title: String,
+  description: String,
+  subtitle: String,
+  fullDescription: String,
+  prices: Array,
+  benefits: Array,
+  from: String,
+  bgClass: String,
+})
+
+const emit = defineEmits(['modalClosed'])
+
+const openModal = ref(false)
+
+// when route query matches this card, open it
+watch(
+  () => props.forceOpen,
+  (val) => {
+    if (val) openModal.value = true
+  },
+  { immediate: true }
+)
+
+const closeModal = () => {
+  openModal.value = false
+  emit('modalClosed')
+}
+
+const route = useRoute()
+const router = useRouter()
+
+const activeTreatment = computed(() => String(route.query.treatment || ''))
+
+const clearTreatmentQuery = () => {
+  // remove just the `treatment` query param
+  const q = { ...route.query }
+  delete q.treatment
+  router.replace({ query: q })
+}
 
 useHead({
   title: 'Aesthetic Treatments in Your City | Without A Trace Aesthetics',
   meta: [
-    {
-      name: 'description',
-      content:
-        'Discover professional aesthetic treatments including wrinkle relaxants, dermal fillers, microneedling, skin boosters, Profhilo and chemical peels at Without A Trace Aesthetics.'
-    },
-    {
-      name: 'keywords',
-      content:
-        'aesthetic clinic, wrinkle relaxants, dermal fillers, microneedling, profhilo, skin boosters, chemical peels'
-    }
+    { name: 'description', content: 'Discover professional aesthetic treatments including wrinkle relaxants, dermal fillers, microneedling, skin boosters, Profhilo and chemical peels at Without A Trace Aesthetics.' },
+    { name: 'keywords', content: 'aesthetic clinic, wrinkle relaxants, dermal fillers, microneedling, profhilo, skin boosters, chemical peels' }
   ],
   script: [
     {
@@ -158,21 +200,10 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
-        "provider": {
-          "@type": "MedicalBusiness",
-          "name": "Without A Trace Aesthetics"
-        },
-        "serviceType": [
-          "Wrinkle Relaxants",
-          "Dermal Fillers",
-          "Microneedling",
-          "Skin Boosters",
-          "Profhilo",
-          "Skin Peels"
-        ]
+        "provider": { "@type": "MedicalBusiness", "name": "Without A Trace Aesthetics" },
+        "serviceType": ["Wrinkle Relaxants", "Dermal Fillers", "Microneedling", "Skin Boosters", "Profhilo", "Skin Peels"]
       })
     }
   ]
 })
-
 </script>

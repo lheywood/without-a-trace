@@ -44,7 +44,7 @@
         >
           <!-- Close Button -->
           <button
-            @click="openModal = false"
+            @click="closeModal"
             class="absolute top-4 right-5 text-gray-400 hover:text-gray-700
                   text-2xl transition"
             aria-label="Close modal"
@@ -124,9 +124,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const props = defineProps({
+  slug: {type: String, default:''},
+  forceOpen: Boolean,
   title: String,
   subtitle: String,
   description: String,
@@ -142,9 +144,24 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(['modalClosed'])
+
 const openModal = ref(false)
 
+watch(
+  () => props.forceOpen,
+  (open) => {
+    if (open) {
+      openModal.value = true
+    }
+  },
+  { immediate: true }
+)
 
+const closeModal = () => {
+  openModal.value = false
+  emit('modalClosed')
+}
 
 </script>
 

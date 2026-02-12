@@ -11,7 +11,7 @@
       <div class="relative z-10 max-w-6xl mx-auto px-6">
         <div class="max-w-2xl">
           <h1
-            class="font-heading text-4xl md:text-4xl leading-tight text-primary-100 mb-6 zalando-sans-expanded"
+            class="font-heading text-4xl md:text-4xl leading-tight text-black mb-6 zalando-sans-expanded"
           >
             Without A Trace Aesthetics <br />
             Tailored to You
@@ -173,27 +173,28 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+          <!-- Wrinkle Relaxants -->
+          <button
+            type="button"
+            @click="goTreatment('wrinkle-relaxants')"
+            class="text-left bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition"
+          >
             <div class="h-48 overflow-hidden rounded-t-xl">
-              <img
-                :src="wr"
-                alt="Wrinkle Relaxant"
-                class="w-full h-full object-cover"
-              />
+              <img :src="wr" alt="Wrinkle Relaxant" class="w-full h-full object-cover" />
             </div>
-
             <div class="p-6">
               <h3 class="font-medium mb-2">Wrinkle Relaxants</h3>
-              <p class="text-sm text-gray-600">
-                Subtle enhancements for natural results.
-              </p>
+              <p class="text-sm text-gray-600">Subtle enhancements for natural results.</p>
             </div>
-          </div>
+          </button>
 
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div
-              class="h-48 overflow-hidden rounded-t-xl flex items-center justify-center"
-            >
+          <!-- Polynucleotides -->
+          <button
+            type="button"
+            @click="goTreatment('polynucleotide')"
+            class="text-left bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition"
+          >
+            <div class="h-48 overflow-hidden rounded-t-xl flex items-center justify-center">
               <img :src="pol" alt="" class="w-auto h-full" />
             </div>
             <div class="p-6">
@@ -202,25 +203,22 @@
                 Skin-repair treatment improving texture, hydration, and radiance
               </p>
             </div>
-          </div>
+          </button>
 
-          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div
-              class="h-48 overflow-hidden rounded-t-xl flex items-center justify-center"
-            >
-              <img
-                :src="mic"
-                alt="Treatment image"
-                class="w-auto h-full scale-90"
-              />
+          <!-- Microneedling -->
+          <button
+            type="button"
+            @click="goTreatment('microneedling')"
+            class="text-left bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition"
+          >
+            <div class="h-48 overflow-hidden rounded-t-xl flex items-center justify-center">
+              <img :src="mic" alt="Treatment image" class="w-auto h-full scale-90" />
             </div>
             <div class="p-6">
               <h3 class="font-medium mb-2">Microneedling</h3>
-              <p class="text-sm text-gray-600">
-                Improve texture, tone, and overall skin radiance.
-              </p>
+              <p class="text-sm text-gray-600">Improve texture, tone, and overall skin radiance.</p>
             </div>
-          </div>
+          </button>
         </div>
 
         <div class="text-center mt-12">
@@ -257,4 +255,12 @@ import traceyPowell from "../assets/traceypowell.png";
 import mic from "../assets/microneedlingpen.png";
 import pol from "../assets/polynucleotides.png";
 import wr from "../assets/wrinklerelaxant.jpg";
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goTreatment = (slug) => {
+  router.push({ path: '/treatments', query: { treatment: slug } })
+}
+
 </script>
